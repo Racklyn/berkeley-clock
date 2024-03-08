@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+service TimeService {
+  rpc GetTimeDifference(TimeRequest) returns (TimeResponse);
+  rpc AdjustTime(TimeAdjustment) returns (TimeResponse);
+}
+
+message TimeRequest {
+  string client_time = 1;
+}
+
+message TimeResponse {
+  string time_difference = 1;
+}
+
+message TimeAdjustment {
+  string time_adjustment = 1;
+}
